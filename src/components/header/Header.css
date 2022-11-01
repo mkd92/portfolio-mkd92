@@ -1,0 +1,41 @@
+.header {
+  background-color: #ccdbdc;
+  color: #003249;
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 10vh;
+}
+.logo {
+  height: 3em;
+  margin: auto 0;
+}
+.button__hover {
+  border-radius: 10rem;
+  padding: 0.5em;
+  transition: background-color 0.5s ease-in-out 100ms,
+    color 0.5s ease-in-out 100ms;
+}
+.button__hover:hover {
+  background-color: #003249;
+  color: #ccdbdc;
+}
+.header > ul > li {
+  position: relative;
+}
+.header > ul > li > a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #003249;
+  transform: scaleX(0);
+  transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+  transform-origin: right center;
+}
+.header > ul > li > a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left center;
+  transition-duration: 0.4s;
+}

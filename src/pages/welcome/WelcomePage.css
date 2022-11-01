@@ -1,0 +1,50 @@
+.welcome__hero {
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 80vh;
+  display: flex;
+  color: #003249;
+  align-items: center;
+  justify-content: space-between;
+}
+.left > li {
+  text-align: left;
+  font-size: 5rem;
+}
+.top {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.post {
+  font-size: 20px;
+  font-weight: 600;
+  background-color: #003249;
+  border-radius: 40px;
+  padding: 10px 40px;
+  color: #ccdbdc;
+  margin-left: 20px;
+}
+.image-bg {
+  position: relative;
+  top: -22rem;
+  background-color: #80ced7;
+  height: 25rem;
+  width: 25rem;
+  z-index: -1;
+  border-radius: 100rem;
+}
+.right {
+  height: 30rem;
+}
+.hi {
+  font-size: 4rem;
+  font-weight: 600;
+}
+.name {
+  font-weight: bold;
+}
+.iam {
+  font-weight: 600;
+  font-size: 4rem;
+}

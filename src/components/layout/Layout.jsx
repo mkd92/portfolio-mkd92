@@ -1,4 +1,7 @@
 import Header from "../header/Header";
+import Footer from "../footer/Footer";
+import Transition from "../transition/Transition";
+
 import "./Layout.css";
 import React from "react";
 
@@ -7,6 +10,7 @@ function Layout({ children }) {
     <>
       <Header />
       {children}
+      <Footer />
     </>
   );
 }

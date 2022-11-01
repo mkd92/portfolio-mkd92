@@ -1,0 +1,21 @@
+.title {
+  font-size: 2rem;
+  color: #003249;
+  font-weight: bold;
+}
+
+.content {
+  margin-top: 2em;
+  font-size: 1.5em;
+  text-align: center;
+  color: #003249;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.about__main {
+  padding-top: 6rem;
+  width: 100vw;
+  height: 30rem;
+  background-color: #9ad1d4;
+}

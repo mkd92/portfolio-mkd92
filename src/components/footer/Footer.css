@@ -1,0 +1,13 @@
+.footer__main {
+  height: 10vh;
+  background-color: #003249;
+  color: #ccdbdc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer__links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
