@@ -1,7 +1,10 @@
 import React from "react";
+import { motion as m } from "framer-motion";
+
 import About from "../../components/about/About";
 import Footer from "../../components/footer/Footer";
 import "./WelcomePage.css";
+import { cubicBezier } from "./../../../node_modules/@motionone/easing/lib/cubic-bezier";
 
 function WelcomePage() {
   return (
@@ -16,8 +19,16 @@ function WelcomePage() {
         </li>
       </ul>
       <div className="right">
-        <img src="../../assets/Imagemkd.png" alt="" srcset="" />
-        <div className="image-bg"></div>
+        <img src="../../assets/Imagemkd.png" alt="" />
+        <m.div
+          animate={{
+            scale: [1, 1.5, 1.5, 1, 1],
+            rotate: [0, 0, 270, 270, 0],
+            borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+          }}
+          transition={{ type: "spring", duration: 20, repeat: Infinity }}
+          className="image-bg"
+        ></m.div>
       </div>
     </div>
   );

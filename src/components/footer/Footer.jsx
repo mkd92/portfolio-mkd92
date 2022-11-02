@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import "./Footer.css";
 function Footer() {
   return (
-    <div className="footer__main w-full">
+    <div className="footer__main w-full uppercase">
       <div className=" footer__links">
         <a className="mx-10 ">instagram</a>
         <a className="mx-10 ">twitter</a>
@@ -13,9 +13,6 @@ function Footer() {
         <div className="mx-10  h-12 w-12">
           <img src="../../assets/logo-night.svg" alt="" />
         </div>
-        <Link to="/" className="mx-10 ">
-          home
-        </Link>
         <Link to="/portfolio" className="mx-10 ">
           portfolio
         </Link>
@@ -24,6 +21,9 @@ function Footer() {
         </Link>
         <Link to="/contact" className="mx-10 ">
           contact
+        </Link>
+        <Link to="/" className="mx-10 ">
+          about
         </Link>
       </div>
     </div>

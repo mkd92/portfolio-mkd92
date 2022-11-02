@@ -7,11 +7,11 @@ import React from "react";
 
 function Layout({ children }) {
   return (
-    <>
+    <div className=" layout flex flex-col justify-between content-center">
       <Header />
       {children}
       <Footer />
-    </>
+    </div>
   );
 }
 

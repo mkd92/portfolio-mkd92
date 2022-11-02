@@ -15,21 +15,6 @@ const img = [
     src: slack,
     url: "https://slack-clone-4df82.firebaseapp.com/",
   },
-  {
-    name: "spacex",
-    src: spacex,
-    url: "https://mkd92.github.io/spacexClone/",
-  },
-  {
-    name: "spacex",
-    src: spacex,
-    url: "https://mkd92.github.io/spacexClone/",
-  },
-  {
-    name: "spacex",
-    src: spacex,
-    url: "https://mkd92.github.io/spacexClone/",
-  },
 ];
 
 export default img;

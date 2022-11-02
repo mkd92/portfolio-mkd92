@@ -1,41 +1,50 @@
-import React, { useEffect, useRef, useState } from "react";
-import { motion as m } from "framer-motion";
-import images from "../../helpers/imageImport.js";
+import React, { useState } from "react";
+import { v4 } from "uuid";
+import { FaArrowAltCircleRight, FaArrowAltCircleLeft } from "react-icons/fa";
+import imageImport from "../../helpers/imageImport";
 import "./PortfolioPage.css";
-import { ScrollOffset } from "./../../../node_modules/@motionone/dom/lib/gestures/scroll/offsets/presets";
-import { scroll } from "./../../../node_modules/@motionone/dom/lib/gestures/scroll/index";
+
 function PortfolioPage() {
-  const [width, setWidth] = useState(0);
-  const carousel = useRef();
-  useEffect(() => {
-    setWidth(carousel.current.scrollWidth - carousel.current.offsetWidth);
-  }, []);
+  const [active, setActive] = useState(0);
+  const length = imageImport.length;
+  const nextSlide = () => {
+    setActive(active === length - 1 ? 0 : active + 1);
+  };
+  const prevSlide = () => {
+    setActive(active === 0 ? length - 1 : active - 1);
+  };
+  if (!Array.isArray(imageImport) || length <= 0) {
+    return null;
+  }
+  const openWindow = (url) => {
+    window.open(url, "_blank");
+  };
   return (
-    <div className="portfolio__page">
-      <m.div
-        ref={carousel}
-        className="carousel"
-        whileTap={{ cursor: "grabbing" }}
-      >
-        <m.div
-          drag="x"
-          dragConstraints={{ right: 0, left: -width }}
-          className="inner-carousel"
-        >
-          {images.map((image, i) => (
-            <m.div className="item" key={i}>
-              <button
-                onClick={() =>
-                  window.open(image.url, "_blank", "noopener,noreferrer")
-                }
-              >
-                <img src={image.src} alt="" />
-              </button>
-            </m.div>
-          ))}
-        </m.div>
-      </m.div>
-    </div>
+    <section className="slider">
+      <FaArrowAltCircleLeft className="left-arrow" onClick={prevSlide} />
+      <FaArrowAltCircleRight className="right-arrow" onClick={nextSlide} />
+      {imageImport.map((image, index) => {
+        return (
+          <div
+            className={index === active ? "slide active" : "slide"}
+            key={v4()}
+          >
+            {index === active && (
+              <>
+                <img
+                  src={image.src}
+                  className="image"
+                  onClick={() => openWindow(image.url)}
+                />{" "}
+                <span className="text-xl font-semibold uppercase">
+                  {image.name}
+                </span>
+              </>
+            )}
+          </div>
+        );
+      })}
+    </section>
   );
 }
 

@@ -1,27 +1,70 @@
-.portfolio__page {
-  height: 80vh;
+.slider {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.item {
-  min-height: 40rem;
-  width: 30rem;
-  padding: 30px;
-  min-width: 70rem;
+.image {
+  width: 1500px;
+  height: 700px;
+  border-radius: 10px;
 }
 
-.item > button {
-  width: 100%;
-  height: 100%;
-  /* pointer-events: none; */
+.right-arrow {
+  position: absolute;
+  top: 50%;
+  right: 32px;
+  font-size: 3rem;
+  color: #000;
+  z-index: 10;
+  cursor: pointer;
+  color: #007ea7;
+  /* user-select: none; */
 }
-.item > button > img {
+
+.left-arrow {
+  position: absolute;
+  top: 50%;
+  left: 32px;
+  font-size: 3rem;
+  color: #000;
+  z-index: 10;
+  cursor: pointer;
+  color: #007ea7;
+  /* user-select: none; */
+}
+
+.slide {
+  opacity: 0;
+  transition-duration: 1s ease;
+  transform: scale(0.5);
+  display: hidden;
+}
+
+.slide.active {
+  display: block;
+  width: 900px;
+  background-color: transparent;
+  transition-duration: 1s;
+  animation: changes 1s ease forwards;
+  cursor: pointer;
+}
+.slide.active > img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
   border-radius: 1rem;
 }
 
-.inner-carousel {
-  display: flex;
-}
-.carousel {
-  cursor: grab;
-  overflow: hidden;
+@keyframes changes {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
